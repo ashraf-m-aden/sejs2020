@@ -97,6 +97,7 @@ import axios from 'axios'
 export default {
   data() {
     return {
+      baseUrl: 'https://sejs-backend.herokuapp.com/',
       infos: false,
       result: '',
       style: '',
@@ -106,7 +107,7 @@ export default {
   },
   mounted() {
     axios
-      .get('http://localhost:3001/towns')
+      .get(this.baseUrl + 'towns')
       .then((data) => {
         data.data.forEach((element) => {
           this.info.push(element)

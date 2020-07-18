@@ -110,7 +110,7 @@ export default {
     return {
       menuVisible: false,
       drawer: false,
-
+      baseUrl: 'https://sejs-backend.herokuapp.com/',
       region: [],
       cdc: [
         {
@@ -159,7 +159,7 @@ export default {
     const townId = this.$route.query.townId
 
     axios
-      .post('http://localhost:3001/getTown', {
+      .post(this.baseUrl + 'getTown', {
         townId,
       })
       .then((data) => {
